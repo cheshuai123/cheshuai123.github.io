@@ -957,8 +957,8 @@ WebDriverException: Message: unknown error: Element &lt;a href=&quot;javascript:
     el: '#comments',
     verify: false,
     notify: false,
-    appId: 'yIILi55PmHDCHUVytzkYLTQU-gzGzoHsz',
-    appKey: 'GUXtUU8E783PabnyhrDEMfu3',
+    appId: 'f4o1eqmJbagFBNjdaqWtLLDP-9Nh9j0Va',
+    appKey: '1sa3bcsHgjw0nzCDWzTfvgdB',
     placeholder: 'Just go go',
     avatar: 'mm',
     meta: guest,
@@ -1325,9 +1325,14 @@ WebDriverException: Message: unknown error: Element &lt;a href=&quot;javascript:
               })
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
             
           }
         })
@@ -1338,15 +1343,15 @@ WebDriverException: Message: unknown error: Element &lt;a href=&quot;javascript:
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'yIILi55PmHDCHUVytzkYLTQU-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'f4o1eqmJbagFBNjdaqWtLLDP-9Nh9j0Va')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'yIILi55PmHDCHUVytzkYLTQU-gzGzoHsz',
-                'X-LC-Key': 'GUXtUU8E783PabnyhrDEMfu3',
+                'X-LC-Id': 'f4o1eqmJbagFBNjdaqWtLLDP-9Nh9j0Va',
+                'X-LC-Key': '1sa3bcsHgjw0nzCDWzTfvgdB',
                 'Content-Type': 'application/json',
               },
               data: data

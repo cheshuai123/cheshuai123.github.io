@@ -400,6 +400,19 @@
           
             
             
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/hm773/27633c18.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/hm773/27633c18.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -631,7 +644,6 @@ WebDriverException: Message: unknown error: Element &lt;a href=&quot;javascript:
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzcyMS8yMDI2MQ"></div>
     </div>
 
   
@@ -828,6 +840,8 @@ WebDriverException: Message: unknown error: Element &lt;a href=&quot;javascript:
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
         
+          <span id="scrollpercent"><span>0</span>%</span>
+        
       </div>
     
 
@@ -925,22 +939,37 @@ WebDriverException: Message: unknown error: Element &lt;a href=&quot;javascript:
   
 
   
-
-
   
-    <script>
-  window.livereOptions = {
-    refer: 'hm773/27633c18.html'
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'yIILi55PmHDCHUVytzkYLTQU-gzGzoHsz',
+    appKey: 'GUXtUU8E783PabnyhrDEMfu3',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
 </script>
+
+
+
 
   
 

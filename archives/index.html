@@ -1111,15 +1111,15 @@
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'KDeF8LAt7xxkT8yxPQkq1eFF-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'yIILi55PmHDCHUVytzkYLTQU-gzGzoHsz')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'KDeF8LAt7xxkT8yxPQkq1eFF-gzGzoHsz',
-                'X-LC-Key': 'DuvozopPOgQQjS0jagQPNWSK',
+                'X-LC-Id': 'yIILi55PmHDCHUVytzkYLTQU-gzGzoHsz',
+                'X-LC-Key': 'GUXtUU8E783PabnyhrDEMfu3',
                 'Content-Type': 'application/json',
               },
               data: data

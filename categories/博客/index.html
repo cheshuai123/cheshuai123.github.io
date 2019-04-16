@@ -447,7 +447,7 @@
       </h3>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-14T18:01:18+08:00" content="2019-04-14">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-04-14T18:01:00+08:00" content="2019-04-14">
           04-14
         </time>
       </div>
@@ -533,7 +533,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -552,7 +552,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -575,7 +579,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -656,7 +666,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">21k</span>
   
 
   
@@ -665,7 +675,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">40 分钟</span>
+    <span title="站点阅读时长">39 分钟</span>
   
 </div>
 
@@ -1285,7 +1295,7 @@
   $('.highlight').each(function(i, e) {
     var $wrap = $('<div>').addClass('highlight-wrap');
     $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+    $wrap.append($('<button>').addClass('copy-btn').append('重复造轮子？').on('click', function(e) {
       var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
         return $(e).text();
       }).toArray().join('\n');
@@ -1302,7 +1312,7 @@
       ta.readOnly = false;
       var result = document.execCommand('copy');
       
-        if (result) $(this).text('复制成功');
+        if (result) $(this).text('图纸偷到了！');
         else $(this).text('复制失败');
       
       ta.blur(); // For iOS
@@ -1310,7 +1320,7 @@
     })).on('mouseleave', function(e) {
       var $b = $(this).find('.copy-btn');
       setTimeout(function() {
-        $b.text('复制');
+        $b.text('重复造轮子？');
       }, 300);
     }).append(e);
   })

@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffad30;
+  background: #ff50ff;
 }
 .feed-link,
 .chat {
@@ -2938,8 +2938,16 @@ ul.breadcrumb li+li:last-child {
   color: #7cc7e8;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #a166ab;
+  color: #812990;
   border-bottom-color: #fff;
+}
+.sidebar-nav .sidebar-nav-active:hover {
+  color: #812990;
+  border-bottom-color: #812990;
+}
+.sidebar-nav li:hover {
+  color: #812990;
+  border-bottom-color: #812990;
 }
 a {
   border-bottom: none;
@@ -3142,19 +3150,19 @@ img:hover {
 }
 .post-toc ol a {
   color: #7cc7e8;
-  border-bottom: 1px solid #607d8b;
+  border-bottom: 1px solid #7cc7e8;
 }
 .post-toc ol a:hover {
-  color: #a166ab;
-  border-bottom-color: #a166ab;
+  color: #812990;
+  border-bottom-color: #812990;
 }
 .post-toc .nav .active > a {
-  color: #a166ab;
-  border-bottom-color: #a166ab;
+  color: #812990;
+  border-bottom-color: #812990;
 }
 .post-toc .nav .active > a:hover {
-  color: #a166ab;
-  border-bottom-color: #a166ab;
+  color: #812990;
+  border-bottom-color: #812990;
 }
 .post-toc ol {
   padding: 0px 10px 5px 10px;

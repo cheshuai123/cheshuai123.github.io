@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5332c2;
+  background: #f29fff;
 }
 .feed-link,
 .chat {
@@ -3127,6 +3127,12 @@ img:hover {
   margin: 0 auto;
   text-align: left;
   color: #7cc7e8;
+}
+.post-body .tabs ul.nav-tabs li.tab.active {
+  border-top: 3px solid #7cc7e8;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: #fff;
 }
 .post-toc ol a {
   color: #7cc7e8;

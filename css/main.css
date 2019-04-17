@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f29fff;
+  background: #ffad30;
 }
 .feed-link,
 .chat {
@@ -2889,13 +2889,19 @@ ul.breadcrumb li+li:last-child {
   line-height: 36px;
   font-size: 30px;
   font-weight: bold;
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "STHeiti", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+  font-family: "Linux Biolinum", 'Noto Serif SC', sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #fff;
+}
+.post-body {
+  font-family: "Linux Biolinum", 'Noto Serif SC', sans-serif;
+}
+.posts-expand .post-body {
+  text-align: justify !important;
 }
 .post {
   margin-top: 5px;

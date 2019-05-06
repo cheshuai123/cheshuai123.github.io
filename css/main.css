@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2fffff;
+  background: #fffffe;
 }
 .feed-link,
 .chat {
@@ -2899,9 +2899,6 @@ ul.breadcrumb li+li:last-child {
 }
 .post-body {
   font-family: "Linux Biolinum", 'Noto Serif SC', sans-serif;
-}
-.posts-expand .post-body {
-  text-align: justify !important;
 }
 .post {
   margin-top: 5px;

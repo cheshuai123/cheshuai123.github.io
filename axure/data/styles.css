@@ -15,6 +15,9 @@
   font-size:14px;
   text-align:left;
 }
+._文本段落 {
+  text-align:left;
+}
 ._四级标题 {
   font-family:'Arial Normal', 'Arial';
   font-weight:bold;
@@ -154,7 +157,7 @@
   font-size:13px;
   color:#000000;
 }
-._文本段落 {
+._文本段落1 {
   font-size:13px;
   color:#000000;
   text-align:left;
@@ -258,7 +261,7 @@
 .radio_button {
   text-align:left;
 }
-._文本段落1 {
+._文本段落2 {
   text-align:left;
 }
 ._复选框1 {
@@ -300,7 +303,7 @@
 }
 .placeholder {
 }
-._文本段落2 {
+._文本段落3 {
   text-align:left;
 }
 .text_field {
@@ -331,9 +334,6 @@
 .icon {
 }
 .tree_node {
-  text-align:left;
-}
-._文本段落3 {
   text-align:left;
 }
 .iconfont {

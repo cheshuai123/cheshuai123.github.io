@@ -191,8 +191,8 @@
   position:relative;
   left:0px;
   top:0px;
-  width:209px;
-  height:183px;
+  width:189px;
+  height:120px;
   background-image:none;
 }
 #u316_state0_content {
@@ -208,8 +208,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:60px;
-  height:60px;
+  width:40px;
+  height:40px;
   background:inherit;
   background-color:rgba(216, 224, 229, 1);
   border:none;
@@ -228,9 +228,9 @@
   border-width:0px;
   position:absolute;
   left:149px;
-  top:123px;
-  width:60px;
-  height:60px;
+  top:80px;
+  width:40px;
+  height:40px;
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
@@ -243,8 +243,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:60px;
-  height:60px;
+  width:40px;
+  height:40px;
   background:inherit;
   background-color:rgba(216, 224, 229, 1);
   border:none;
@@ -283,8 +283,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:60px;
-  height:60px;
+  width:40px;
+  height:40px;
   background:inherit;
   background-color:rgba(216, 224, 229, 1);
   border:none;
@@ -304,8 +304,8 @@
   position:absolute;
   left:149px;
   top:0px;
-  width:60px;
-  height:60px;
+  width:40px;
+  height:40px;
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
@@ -318,8 +318,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:60px;
-  height:60px;
+  width:40px;
+  height:40px;
   background:inherit;
   background-color:rgba(216, 224, 229, 1);
   border:none;
@@ -350,8 +350,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:30px;
-  height:30px;
+  width:20px;
+  height:20px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -362,20 +362,20 @@
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
-  font-size:28px;
+  font-size:18px;
   text-align:center;
 }
 #u320 {
   border-width:0px;
   position:absolute;
-  left:164px;
-  top:15px;
-  width:30px;
-  height:30px;
+  left:159px;
+  top:10px;
+  width:20px;
+  height:20px;
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
-  font-size:28px;
+  font-size:18px;
   text-align:center;
 }
 #u320_text {
@@ -383,7 +383,7 @@
   position:absolute;
   left:0px;
   top:1px;
-  width:30px;
+  width:20px;
   word-wrap:break-word;
 }
 #u321_div {
@@ -391,8 +391,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:60px;
-  height:60px;
+  width:40px;
+  height:40px;
   background:inherit;
   background-color:rgba(216, 224, 229, 1);
   border:none;
@@ -411,9 +411,9 @@
   border-width:0px;
   position:absolute;
   left:149px;
-  top:63px;
-  width:60px;
-  height:60px;
+  top:40px;
+  width:40px;
+  height:40px;
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
@@ -426,8 +426,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:60px;
-  height:60px;
+  width:40px;
+  height:40px;
   background:inherit;
   background-color:rgba(216, 224, 229, 1);
   border:none;
@@ -458,7 +458,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:30px;
+  width:20px;
   height:30px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -470,28 +470,28 @@
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
-  font-size:28px;
+  font-size:18px;
   text-align:center;
 }
 #u322 {
   border-width:0px;
   position:absolute;
-  left:164px;
-  top:78px;
-  width:30px;
+  left:159px;
+  top:45px;
+  width:20px;
   height:30px;
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
-  font-size:28px;
+  font-size:18px;
   text-align:center;
 }
 #u322_text {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:1px;
-  width:30px;
+  top:4px;
+  width:20px;
   word-wrap:break-word;
 }
 #u323_div {
@@ -499,7 +499,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:30px;
+  width:20px;
   height:30px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -511,28 +511,28 @@
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
-  font-size:28px;
+  font-size:18px;
   text-align:center;
 }
 #u323 {
   border-width:0px;
   position:absolute;
-  left:164px;
-  top:138px;
-  width:30px;
+  left:159px;
+  top:85px;
+  width:20px;
   height:30px;
   font-family:'FontAwesome';
   font-weight:400;
   font-style:normal;
-  font-size:28px;
+  font-size:18px;
   text-align:center;
 }
 #u323_text {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:1px;
-  width:30px;
+  top:6px;
+  width:20px;
   word-wrap:break-word;
 }
 #u324 {

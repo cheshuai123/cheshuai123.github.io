@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #feff1a;
+  background: #e93eff;
 }
 .feed-link,
 .chat {
@@ -2878,10 +2878,10 @@ ul.breadcrumb li+li:last-child {
 }
 .headband {
   height: 3px;
-  background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+  background-image: linear-gradient(90deg, #812990 0%, #7cc7e8 33%, #812990 66%, #7cc7e8 100%);
 }
 .site-meta {
-  background: #7cc7e8;
+  background-image: linear-gradient(90deg, #812990 0%, #7cc7e8 100%);
 }
 .site-title {
   display: inline-block;
@@ -2898,7 +2898,7 @@ ul.breadcrumb li+li:last-child {
   color: #fff;
 }
 .post-body {
-  font-family: "Linux Biolinum", 'Noto Serif SC', sans-serif;
+  font-family: "Linux Biolinum", "Noto Serif SC", sans-serif;
 }
 .post {
   margin-top: 5px;

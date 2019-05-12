@@ -148,7 +148,7 @@
 <meta property="og:site_name" content="车帅的博客">
 <meta property="og:description" content="SQL入门50题新手边做边记录。欢迎评论指出错误。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T09:30:46.411Z">
+<meta property="og:updated_time" content="2019-05-12T13:41:06.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL入门50题">
 <meta name="twitter:description" content="SQL入门50题新手边做边记录。欢迎评论指出错误。">
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-12 17:30:46" itemprop="dateModified" datetime="2019-05-12T17:30:46+08:00">2019-05-12</time>
+                <time title="修改时间：2019-05-12 21:41:06" itemprop="dateModified" datetime="2019-05-12T21:41:06+08:00">2019-05-12</time>
               
             
           </span>
@@ -565,7 +565,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">18k</span>
+                <span title="本文字数">20k</span>
               
 
               
@@ -579,7 +579,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">33 分钟</span>
+                <span title="阅读时长">37 分钟</span>
               
             </div>
           
@@ -2747,7 +2747,363 @@
 </tr>
 </tbody>
 </table>
-<p><details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  Sname, </span><br><span class="line">  <span class="keyword">COUNT</span>(Sname) <span class="keyword">AS</span> <span class="keyword">num</span></span><br><span class="line"><span class="keyword">FROM</span> student</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Sname</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(Sname) &gt; <span class="number">1</span>;</span><br></pre></td></tr></table></figure></details></p>
+<details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  Sname, </span><br><span class="line">  <span class="keyword">COUNT</span>(Sname) <span class="keyword">AS</span> <span class="keyword">num</span></span><br><span class="line"><span class="keyword">FROM</span> student</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Sname</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(Sname) &gt; <span class="number">1</span>;</span><br></pre></td></tr></table></figure><br><br></details>
+
+<h3 id="查询-1990-年出生的学生名单"><a href="#查询-1990-年出生的学生名单" class="headerlink" title="查询 1990 年出生的学生名单"></a>查询 1990 年出生的学生名单</h3><div class="note success"><p>结果:</p></div>
+
+<table>
+<thead>
+<tr>
+<th>SId</th>
+<th>Sname</th>
+<th>Sage</th>
+<th>Ssex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02</td>
+<td>钱电</td>
+<td>1990-12-21 00:00:00</td>
+<td>男</td>
+</tr>
+<tr>
+<td>03</td>
+<td>孙风</td>
+<td>1990-12-20 00:00:00</td>
+<td>男</td>
+</tr>
+<tr>
+<td>04</td>
+<td>李云</td>
+<td>1990-12-06 00:00:00</td>
+<td>男</td>
+</tr>
+<tr>
+<td>01</td>
+<td>赵雷</td>
+<td>1990-01-01 00:00:00</td>
+<td>男</td>
+</tr>
+</tbody>
+</table>
+<details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> student</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">YEAR</span>(student.Sage) = <span class="number">1990</span>;</span><br></pre></td></tr></table></figure><br><br></details>
+
+<h3 id="查询每门课程的平均成绩，结果按平均成绩降序排列，平均成绩相同时，按课程编号升序排列"><a href="#查询每门课程的平均成绩，结果按平均成绩降序排列，平均成绩相同时，按课程编号升序排列" class="headerlink" title="查询每门课程的平均成绩，结果按平均成绩降序排列，平均成绩相同时，按课程编号升序排列"></a>查询每门课程的平均成绩，结果按平均成绩降序排列，平均成绩相同时，按课程编号升序排列</h3><div class="note success"><p>结果:</p></div>
+
+
+<table>
+<thead>
+<tr>
+<th>CId</th>
+<th>平均成绩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02</td>
+<td>72.66667</td>
+</tr>
+<tr>
+<td>03</td>
+<td>68.50000</td>
+</tr>
+<tr>
+<td>01</td>
+<td>64.50000</td>
+</tr>
+</tbody>
+</table>
+<details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  sc.CId, </span><br><span class="line">  <span class="keyword">AVG</span>(sc.score) <span class="keyword">AS</span> 平均成绩</span><br><span class="line"><span class="keyword">FROM</span> sc</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> sc.CId</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">AVG</span>(sc.score) <span class="keyword">DESC</span>, sc.CId;</span><br></pre></td></tr></table></figure><br><br></details>
+
+<h3 id="查询平均成绩大于等于-85-的所有学生的学号、姓名和平均成绩"><a href="#查询平均成绩大于等于-85-的所有学生的学号、姓名和平均成绩" class="headerlink" title="查询平均成绩大于等于 85 的所有学生的学号、姓名和平均成绩"></a>查询平均成绩大于等于 85 的所有学生的学号、姓名和平均成绩</h3><div class="note success"><p>结果:</p></div>
+
+<table>
+<thead>
+<tr>
+<th>SId</th>
+<th>Sname</th>
+<th>平均成绩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>赵雷</td>
+<td>89.66667</td>
+</tr>
+<tr>
+<td>07</td>
+<td>郑竹</td>
+<td>93.50000</td>
+</tr>
+</tbody>
+</table>
+<details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  st.SId, </span><br><span class="line">  st.Sname, </span><br><span class="line">  <span class="keyword">AVG</span>(sc.score) <span class="keyword">AS</span> 平均成绩</span><br><span class="line"><span class="keyword">FROM</span> student <span class="keyword">AS</span> st</span><br><span class="line">  <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> sc.SId = st.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> st.SId</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">AVG</span>(sc.score) &gt; <span class="number">85</span>;</span><br></pre></td></tr></table></figure><br><br></details>
+
+<h3 id="查询课程名称为「数学」，且分数低于-60-的学生姓名和分数"><a href="#查询课程名称为「数学」，且分数低于-60-的学生姓名和分数" class="headerlink" title="查询课程名称为「数学」，且分数低于 60 的学生姓名和分数"></a>查询课程名称为「数学」，且分数低于 60 的学生姓名和分数</h3><div class="note success"><p>结果:</p></div>
+
+<table>
+<thead>
+<tr>
+<th>Sname</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>李云</td>
+<td>30.0</td>
+</tr>
+</tbody>
+</table>
+<details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  st.Sname, </span><br><span class="line">  sc.score</span><br><span class="line"><span class="keyword">FROM</span> student <span class="keyword">AS</span> st</span><br><span class="line">  <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> sc.SId = st.SId</span><br><span class="line"><span class="keyword">WHERE</span> sc.CId = (<span class="keyword">SELECT</span> CId </span><br><span class="line">                <span class="keyword">FROM</span> course </span><br><span class="line">                <span class="keyword">WHERE</span> Cname = <span class="string">'数学'</span>)</span><br><span class="line"><span class="keyword">AND</span> sc.score &lt; <span class="number">60</span>;</span><br></pre></td></tr></table></figure><br><br></details>
+
+<h3 id="查询所有学生的课程及分数情况（存在学生没成绩，没选课的情况"><a href="#查询所有学生的课程及分数情况（存在学生没成绩，没选课的情况" class="headerlink" title="查询所有学生的课程及分数情况（存在学生没成绩，没选课的情况)"></a>查询所有学生的课程及分数情况（存在学生没成绩，没选课的情况)</h3><div class="note success"><p>结果:</p></div>
+
+<table>
+<thead>
+<tr>
+<th>SId</th>
+<th>Sname</th>
+<th>Cname</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>赵雷</td>
+<td>语文</td>
+<td>80.0</td>
+</tr>
+<tr>
+<td>01</td>
+<td>赵雷</td>
+<td>数学</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>01</td>
+<td>赵雷</td>
+<td>英语</td>
+<td>99.0</td>
+</tr>
+<tr>
+<td>02</td>
+<td>钱电</td>
+<td>语文</td>
+<td>70.0</td>
+</tr>
+<tr>
+<td>02</td>
+<td>钱电</td>
+<td>数学</td>
+<td>60.0</td>
+</tr>
+<tr>
+<td>02</td>
+<td>钱电</td>
+<td>英语</td>
+<td>80.0</td>
+</tr>
+<tr>
+<td>03</td>
+<td>孙风</td>
+<td>语文</td>
+<td>80.0</td>
+</tr>
+<tr>
+<td>03</td>
+<td>孙风</td>
+<td>数学</td>
+<td>80.0</td>
+</tr>
+<tr>
+<td>03</td>
+<td>孙风</td>
+<td>英语</td>
+<td>80.0</td>
+</tr>
+<tr>
+<td>04</td>
+<td>李云</td>
+<td>语文</td>
+<td>50.0</td>
+</tr>
+<tr>
+<td>04</td>
+<td>李云</td>
+<td>数学</td>
+<td>30.0</td>
+</tr>
+<tr>
+<td>04</td>
+<td>李云</td>
+<td>英语</td>
+<td>20.0</td>
+</tr>
+<tr>
+<td>05</td>
+<td>周梅</td>
+<td>语文</td>
+<td>76.0</td>
+</tr>
+<tr>
+<td>05</td>
+<td>周梅</td>
+<td>数学</td>
+<td>87.0</td>
+</tr>
+<tr>
+<td>06</td>
+<td>吴兰</td>
+<td>语文</td>
+<td>31.0</td>
+</tr>
+<tr>
+<td>06</td>
+<td>吴兰</td>
+<td>英语</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>07</td>
+<td>郑竹</td>
+<td>数学</td>
+<td>89.0</td>
+</tr>
+<tr>
+<td>07</td>
+<td>郑竹</td>
+<td>英语</td>
+<td>98.0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>赵六</td>
+<td>语文</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>09</td>
+<td>张三</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>10</td>
+<td>李四</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>11</td>
+<td>李四</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>13</td>
+<td>孙七</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+<details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  st.SId, </span><br><span class="line">  st.Sname, </span><br><span class="line">  csc.Cname, </span><br><span class="line">  csc.score</span><br><span class="line"><span class="keyword">FROM</span> student <span class="keyword">AS</span> st</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> (<span class="keyword">SELECT</span> </span><br><span class="line">            c.Cname, </span><br><span class="line">            sc.SId, </span><br><span class="line">            sc.score</span><br><span class="line">          <span class="keyword">FROM</span> course <span class="keyword">AS</span> c</span><br><span class="line">            <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> sc.CId = c.CId) <span class="keyword">AS</span> csc <span class="keyword">ON</span> csc.SId = st.SId;</span><br></pre></td></tr></table></figure><br><br></details>
+
+<h3 id="查询任何一门课程成绩在-70-分以上的姓名、课程名称和分数"><a href="#查询任何一门课程成绩在-70-分以上的姓名、课程名称和分数" class="headerlink" title="查询任何一门课程成绩在 70 分以上的姓名、课程名称和分数"></a>查询任何一门课程成绩在 70 分以上的姓名、课程名称和分数</h3><div class="note success"><p>结果:</p></div>
+
+<table>
+<thead>
+<tr>
+<th>Sname</th>
+<th>score</th>
+<th>Cname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>钱电</td>
+<td>80.0</td>
+<td>英语</td>
+</tr>
+<tr>
+<td>孙风</td>
+<td>80.0</td>
+<td>语文</td>
+</tr>
+<tr>
+<td>孙风</td>
+<td>80.0</td>
+<td>数学</td>
+</tr>
+<tr>
+<td>孙风</td>
+<td>80.0</td>
+<td>英语</td>
+</tr>
+<tr>
+<td>周梅</td>
+<td>76.0</td>
+<td>语文</td>
+</tr>
+<tr>
+<td>周梅</td>
+<td>87.0</td>
+<td>数学</td>
+</tr>
+<tr>
+<td>郑竹</td>
+<td>89.0</td>
+<td>数学</td>
+</tr>
+<tr>
+<td>郑竹</td>
+<td>98.0</td>
+<td>英语</td>
+</tr>
+<tr>
+<td>赵雷</td>
+<td>80.0</td>
+<td>语文</td>
+</tr>
+<tr>
+<td>赵雷</td>
+<td>90.0</td>
+<td>数学</td>
+</tr>
+<tr>
+<td>赵雷</td>
+<td>99.0</td>
+<td>英语</td>
+</tr>
+</tbody>
+</table>
+<details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  st.Sname, </span><br><span class="line">  sc.score, </span><br><span class="line">  course.Cname</span><br><span class="line"><span class="keyword">FROM</span> student <span class="keyword">AS</span> st</span><br><span class="line">  <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> sc.SId = st.SId</span><br><span class="line">  <span class="keyword">JOIN</span> course <span class="keyword">ON</span> sc.CId = course.CId</span><br><span class="line"><span class="keyword">WHERE</span> sc.score &gt; <span class="number">70</span>;</span><br></pre></td></tr></table></figure><br><br></details>
+
+<h3 id="查询存在不及格的课程"><a href="#查询存在不及格的课程" class="headerlink" title="查询存在不及格的课程"></a>查询存在不及格的课程</h3><div class="note success"><p>结果:</p></div>
+
+<table>
+<thead>
+<tr>
+<th>Cname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语文</td>
+</tr>
+<tr>
+<td>数学</td>
+</tr>
+<tr>
+<td>英语</td>
+</tr>
+</tbody>
+</table>
+<p><details><summary>执行代码:</summary><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Cname</span><br><span class="line"><span class="keyword">FROM</span> course</span><br><span class="line"><span class="keyword">WHERE</span> CId <span class="keyword">IN</span> (<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CId</span><br><span class="line">              <span class="keyword">FROM</span> sc</span><br><span class="line">              <span class="keyword">WHERE</span> score &lt; <span class="number">60</span>);</span><br></pre></td></tr></table></figure></details></p>
 <p><br>–未完待更~–</p>
 
       
@@ -3029,7 +3385,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据理解与创建"><span class="nav-number">1.</span> <span class="nav-text">数据理解与创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建学生表Student"><span class="nav-number">1.1.</span> <span class="nav-text">创建学生表Student</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建课程表Course"><span class="nav-number">1.2.</span> <span class="nav-text">创建课程表Course</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建教师表Teacher"><span class="nav-number">1.3.</span> <span class="nav-text">创建教师表Teacher</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建成绩表SC"><span class="nav-number">1.4.</span> <span class="nav-text">创建成绩表SC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目练习"><span class="nav-number">2.</span> <span class="nav-text">题目练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询”01”课程比”02”课程成绩高的学生的信息及课程分数"><span class="nav-number">2.1.</span> <span class="nav-text">查询”01”课程比”02”课程成绩高的学生的信息及课程分数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同时存在”-01-“课程和”-02-“课程的情况"><span class="nav-number">2.1.1.</span> <span class="nav-text">同时存在” 01 “课程和” 02 “课程的情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存在”01”课程但可能不存在”02”课程的情况-不存在时显示为-null"><span class="nav-number">2.1.2.</span> <span class="nav-text">存在”01”课程但可能不存在”02”课程的情况(不存在时显示为 null )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不存在”01”课程但存在”02“课程的情况"><span class="nav-number">2.1.3.</span> <span class="nav-text">不存在”01”课程但存在”02“课程的情况</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询平均成绩大于等于-60-分的同学的学生编号和学生姓名和平均成绩"><span class="nav-number">2.2.</span> <span class="nav-text">查询平均成绩大于等于 60 分的同学的学生编号和学生姓名和平均成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询在-SC-表存在成绩的学生信息"><span class="nav-number">2.3.</span> <span class="nav-text">查询在 SC 表存在成绩的学生信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询所有同学的学生编号、学生姓名、选课总数、所有课程的成绩总和"><span class="nav-number">2.4.</span> <span class="nav-text">查询所有同学的学生编号、学生姓名、选课总数、所有课程的成绩总和</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#要显示没选课的学生-在成绩表中无记录-，使用join"><span class="nav-number">2.4.1.</span> <span class="nav-text">要显示没选课的学生(在成绩表中无记录)，使用join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查有成绩的学生信息（同2-3？）"><span class="nav-number">2.4.2.</span> <span class="nav-text">查有成绩的学生信息（同2.3？）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询「李」姓老师的数量"><span class="nav-number">2.5.</span> <span class="nav-text">查询「李」姓老师的数量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询学过「张三」老师授课的同学的信息"><span class="nav-number">2.6.</span> <span class="nav-text">查询学过「张三」老师授课的同学的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询没有学全所有课程的同学的信息"><span class="nav-number">2.7.</span> <span class="nav-text">查询没有学全所有课程的同学的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询至少有一门课与学号为”-01-“的同学所学相同的同学的信息"><span class="nav-number">2.8.</span> <span class="nav-text">查询至少有一门课与学号为” 01 “的同学所学相同的同学的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询和”-01-“号的同学学习的课程完全相同的其他同学的信息"><span class="nav-number">2.9.</span> <span class="nav-text">查询和” 01 “号的同学学习的课程完全相同的其他同学的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询没学过”张三”老师讲授的任一门课程的学生姓名"><span class="nav-number">2.10.</span> <span class="nav-text">查询没学过”张三”老师讲授的任一门课程的学生姓名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询两门及其以上不及格课程的同学的学号，姓名及其平均成绩"><span class="nav-number">2.11.</span> <span class="nav-text">查询两门及其以上不及格课程的同学的学号，姓名及其平均成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检索”-01-“课程分数小于-60，按分数降序排列的学生信息"><span class="nav-number">2.12.</span> <span class="nav-text">检索” 01 “课程分数小于 60，按分数降序排列的学生信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩"><span class="nav-number">2.13.</span> <span class="nav-text">按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询各科成绩最高分、最低分和平均分-以如下形式显示："><span class="nav-number">2.14.</span> <span class="nav-text">查询各科成绩最高分、最低分和平均分,以如下形式显示：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按各科成绩进行排序，并显示排名"><span class="nav-number">2.15.</span> <span class="nav-text">按各科成绩进行排序，并显示排名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示序号"><span class="nav-number">2.15.1.</span> <span class="nav-text">显示序号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示排名（排名重复时保留空缺）"><span class="nav-number">2.15.2.</span> <span class="nav-text">显示排名（排名重复时保留空缺）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示排名（排名重复时合并名次）"><span class="nav-number">2.15.3.</span> <span class="nav-text">显示排名（排名重复时合并名次）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据排序分组（提供分组数n-如n-5）"><span class="nav-number">2.15.4.</span> <span class="nav-text">根据排序分组（提供分组数n,如n=5）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询学生的总成绩，并进行排名，总分重复时不保留名次空缺"><span class="nav-number">2.16.</span> <span class="nav-text">查询学生的总成绩，并进行排名，总分重复时不保留名次空缺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计各科成绩各分数段人数：课程编号，课程名称，-100-85-，-85-70-，-70-60-，-60-0-及所占百分比"><span class="nav-number">2.17.</span> <span class="nav-text">统计各科成绩各分数段人数：课程编号，课程名称，[100-85]，[85-70]，[70-60]，[60-0] 及所占百分比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询各科成绩前三名的记录"><span class="nav-number">2.18.</span> <span class="nav-text">查询各科成绩前三名的记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询每门课程被选修的学生数"><span class="nav-number">2.19.</span> <span class="nav-text">查询每门课程被选修的学生数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询出只选修两门课程的学生学号和姓名"><span class="nav-number">2.20.</span> <span class="nav-text">查询出只选修两门课程的学生学号和姓名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询男生、女生人数"><span class="nav-number">2.21.</span> <span class="nav-text">查询男生、女生人数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询名字中含有「风」字的学生信息"><span class="nav-number">2.22.</span> <span class="nav-text">查询名字中含有「风」字的学生信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询同名学生名单，并统计同名人数"><span class="nav-number">2.23.</span> <span class="nav-text">查询同名学生名单，并统计同名人数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据理解与创建"><span class="nav-number">1.</span> <span class="nav-text">数据理解与创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建学生表Student"><span class="nav-number">1.1.</span> <span class="nav-text">创建学生表Student</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建课程表Course"><span class="nav-number">1.2.</span> <span class="nav-text">创建课程表Course</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建教师表Teacher"><span class="nav-number">1.3.</span> <span class="nav-text">创建教师表Teacher</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建成绩表SC"><span class="nav-number">1.4.</span> <span class="nav-text">创建成绩表SC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目练习"><span class="nav-number">2.</span> <span class="nav-text">题目练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询”01”课程比”02”课程成绩高的学生的信息及课程分数"><span class="nav-number">2.1.</span> <span class="nav-text">查询”01”课程比”02”课程成绩高的学生的信息及课程分数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同时存在”-01-“课程和”-02-“课程的情况"><span class="nav-number">2.1.1.</span> <span class="nav-text">同时存在” 01 “课程和” 02 “课程的情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存在”01”课程但可能不存在”02”课程的情况-不存在时显示为-null"><span class="nav-number">2.1.2.</span> <span class="nav-text">存在”01”课程但可能不存在”02”课程的情况(不存在时显示为 null )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不存在”01”课程但存在”02“课程的情况"><span class="nav-number">2.1.3.</span> <span class="nav-text">不存在”01”课程但存在”02“课程的情况</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询平均成绩大于等于-60-分的同学的学生编号和学生姓名和平均成绩"><span class="nav-number">2.2.</span> <span class="nav-text">查询平均成绩大于等于 60 分的同学的学生编号和学生姓名和平均成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询在-SC-表存在成绩的学生信息"><span class="nav-number">2.3.</span> <span class="nav-text">查询在 SC 表存在成绩的学生信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询所有同学的学生编号、学生姓名、选课总数、所有课程的成绩总和"><span class="nav-number">2.4.</span> <span class="nav-text">查询所有同学的学生编号、学生姓名、选课总数、所有课程的成绩总和</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#要显示没选课的学生-在成绩表中无记录-，使用join"><span class="nav-number">2.4.1.</span> <span class="nav-text">要显示没选课的学生(在成绩表中无记录)，使用join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查有成绩的学生信息（同2-3？）"><span class="nav-number">2.4.2.</span> <span class="nav-text">查有成绩的学生信息（同2.3？）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询「李」姓老师的数量"><span class="nav-number">2.5.</span> <span class="nav-text">查询「李」姓老师的数量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询学过「张三」老师授课的同学的信息"><span class="nav-number">2.6.</span> <span class="nav-text">查询学过「张三」老师授课的同学的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询没有学全所有课程的同学的信息"><span class="nav-number">2.7.</span> <span class="nav-text">查询没有学全所有课程的同学的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询至少有一门课与学号为”-01-“的同学所学相同的同学的信息"><span class="nav-number">2.8.</span> <span class="nav-text">查询至少有一门课与学号为” 01 “的同学所学相同的同学的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询和”-01-“号的同学学习的课程完全相同的其他同学的信息"><span class="nav-number">2.9.</span> <span class="nav-text">查询和” 01 “号的同学学习的课程完全相同的其他同学的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询没学过”张三”老师讲授的任一门课程的学生姓名"><span class="nav-number">2.10.</span> <span class="nav-text">查询没学过”张三”老师讲授的任一门课程的学生姓名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询两门及其以上不及格课程的同学的学号，姓名及其平均成绩"><span class="nav-number">2.11.</span> <span class="nav-text">查询两门及其以上不及格课程的同学的学号，姓名及其平均成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检索”-01-“课程分数小于-60，按分数降序排列的学生信息"><span class="nav-number">2.12.</span> <span class="nav-text">检索” 01 “课程分数小于 60，按分数降序排列的学生信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩"><span class="nav-number">2.13.</span> <span class="nav-text">按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询各科成绩最高分、最低分和平均分-以如下形式显示："><span class="nav-number">2.14.</span> <span class="nav-text">查询各科成绩最高分、最低分和平均分,以如下形式显示：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按各科成绩进行排序，并显示排名"><span class="nav-number">2.15.</span> <span class="nav-text">按各科成绩进行排序，并显示排名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示序号"><span class="nav-number">2.15.1.</span> <span class="nav-text">显示序号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示排名（排名重复时保留空缺）"><span class="nav-number">2.15.2.</span> <span class="nav-text">显示排名（排名重复时保留空缺）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示排名（排名重复时合并名次）"><span class="nav-number">2.15.3.</span> <span class="nav-text">显示排名（排名重复时合并名次）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据排序分组（提供分组数n-如n-5）"><span class="nav-number">2.15.4.</span> <span class="nav-text">根据排序分组（提供分组数n,如n=5）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询学生的总成绩，并进行排名，总分重复时不保留名次空缺"><span class="nav-number">2.16.</span> <span class="nav-text">查询学生的总成绩，并进行排名，总分重复时不保留名次空缺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计各科成绩各分数段人数：课程编号，课程名称，-100-85-，-85-70-，-70-60-，-60-0-及所占百分比"><span class="nav-number">2.17.</span> <span class="nav-text">统计各科成绩各分数段人数：课程编号，课程名称，[100-85]，[85-70]，[70-60]，[60-0] 及所占百分比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询各科成绩前三名的记录"><span class="nav-number">2.18.</span> <span class="nav-text">查询各科成绩前三名的记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询每门课程被选修的学生数"><span class="nav-number">2.19.</span> <span class="nav-text">查询每门课程被选修的学生数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询出只选修两门课程的学生学号和姓名"><span class="nav-number">2.20.</span> <span class="nav-text">查询出只选修两门课程的学生学号和姓名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询男生、女生人数"><span class="nav-number">2.21.</span> <span class="nav-text">查询男生、女生人数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询名字中含有「风」字的学生信息"><span class="nav-number">2.22.</span> <span class="nav-text">查询名字中含有「风」字的学生信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询同名学生名单，并统计同名人数"><span class="nav-number">2.23.</span> <span class="nav-text">查询同名学生名单，并统计同名人数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询-1990-年出生的学生名单"><span class="nav-number">2.24.</span> <span class="nav-text">查询 1990 年出生的学生名单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询每门课程的平均成绩，结果按平均成绩降序排列，平均成绩相同时，按课程编号升序排列"><span class="nav-number">2.25.</span> <span class="nav-text">查询每门课程的平均成绩，结果按平均成绩降序排列，平均成绩相同时，按课程编号升序排列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询平均成绩大于等于-85-的所有学生的学号、姓名和平均成绩"><span class="nav-number">2.26.</span> <span class="nav-text">查询平均成绩大于等于 85 的所有学生的学号、姓名和平均成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询课程名称为「数学」，且分数低于-60-的学生姓名和分数"><span class="nav-number">2.27.</span> <span class="nav-text">查询课程名称为「数学」，且分数低于 60 的学生姓名和分数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询所有学生的课程及分数情况（存在学生没成绩，没选课的情况"><span class="nav-number">2.28.</span> <span class="nav-text">查询所有学生的课程及分数情况（存在学生没成绩，没选课的情况)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询任何一门课程成绩在-70-分以上的姓名、课程名称和分数"><span class="nav-number">2.29.</span> <span class="nav-text">查询任何一门课程成绩在 70 分以上的姓名、课程名称和分数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询存在不及格的课程"><span class="nav-number">2.30.</span> <span class="nav-text">查询存在不及格的课程</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -3062,7 +3418,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">38k</span>
   
 
   
@@ -3071,7 +3427,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:04</span>
+    <span title="站点阅读时长">1:08</span>
   
 </div>
 
